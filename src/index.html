@@ -8,20 +8,6 @@
     <style>
          .amp-content-title{ display: none; }
     </style>
-    <script type="application/javascript">
-        var started = false;
-        var checkForPlay = function() {
-           var player = document.querySelector("#azuremediaplayer video");
-           if (player && player.paused && player.src) {
-               player.play();
-               started = true;
-           } else if (!started) {
-               window.setTimeout(checkForPlay,50);
-           }
-        }
-        window.setTimeout(checkForPlay,50);
-    </script>
-
     <!--*****START OF Azure Media Player Scripts*****-->
         <!--Note: DO NOT USE the "latest" folder in production. Replace "latest" with a version number like "1.0.0"-->
         <!--EX:<script src="//amp.azure.net/libs/amp/1.0.0/azuremediaplayer.min.js"></script>-->
