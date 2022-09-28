@@ -43,7 +43,8 @@
                 poster: ""
             };
             var myPlayer = amp("azuremediaplayer", myOptions);
-            myPlayer.src([{ src: "//livebridgemedia-gewc1.streaming.media.azure.net/"+query.v+".ism/manifest", type: "application/vnd.ms-sstr+xml" } ]);
+
+            myPlayer.src([{ src: "//livebridgemedia-gewc1.streaming.media.azure.net/" + query.v.replace(/\.mp4/, "")+".ism/manifest", type: "application/vnd.ms-sstr+xml" } ]);
         }
     </script>
 </body>
