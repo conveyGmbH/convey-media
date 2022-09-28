@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Convey Media Viewer App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic Video on Demand Static Web App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--*****START OF Azure Media Player Scripts*****-->
+        <!--Note: DO NOT USE the "latest" folder in production. Replace "latest" with a version number like "1.0.0"-->
+        <!--EX:<script src="//amp.azure.net/libs/amp/1.0.0/azuremediaplayer.min.js"></script>-->
+        <!--Azure Media Player versions can be queried from //aka.ms/ampchangelog-->
+    <link href="//amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+    <script src="//amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
+    <!--*****END OF Azure Media Player Scripts*****-->
 </head>
-
 <body>
-  <main>
-    <h1>Convey Media Viewer App</h1>
-  </main>
+    <h1>Clear Streaming Only</h1>
+    <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" controls autoplay poster="" data-setup='{}' tabindex="0">
+        <source src="https://livebridgemedia-gewc1.streaming.media.azure.net/309e8d6a-2084-4ca7-9184-5610881a8291/2017_PA_tl17_Film.ism/manifest(format=mpd-time-cmaf)" type="application/vnd.ms-sstr+xml" />
+        <p class="amp-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+    </video>
 </body>
-
 </html>
