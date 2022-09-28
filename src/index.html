@@ -11,8 +11,8 @@
     <script type="application/javascript">
         var started = false;
         var checkForPlay = function() {
-           var player = document.getElementById("azuremediaplayer");
-           if (player && player.paused && player.readyState > 2) {
+           var player = document.querySelector("#azuremediaplayer video");
+           if (player && player.paused && player.src) {
                player.play();
                started = true;
            } else if (!started) {
