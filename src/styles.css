@@ -9,11 +9,11 @@ html, body {
   width: 100% !important; 
   height: 100% !important;
 }
+.azuremediaplayer {
+    position: initial !important;
+}
 
 .amp-content-title {
-  display: none;
+    display: none;
 }
 
-.amp-default-skin .vjs-loading-spinner {
-    visibility: hidden;
-}
