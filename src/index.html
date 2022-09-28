@@ -44,6 +44,10 @@
             };
             var myPlayer = amp("azuremediaplayer", myOptions);
 
+			var vjsLoadingSpinner = document.querySelector(".vjs-loading-spinner");
+			if (vjsLoadingSpinner && vjsLoadingSpinner.style) {
+			    vjsLoadingSpinner.style.visibility = "visible;"
+			}
             myPlayer.src([{ src: "//livebridgemedia-gewc1.streaming.media.azure.net/" + query.v+".ism/manifest", type: "application/vnd.ms-sstr+xml" } ]);
         }
     </script>

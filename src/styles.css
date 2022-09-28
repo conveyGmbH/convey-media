@@ -13,3 +13,7 @@ html, body {
 .amp-content-title {
   display: none;
 }
+
+.amp-default-skin .vjs-loading-spinner {
+    visibility: hidden;
+}
