@@ -5,7 +5,22 @@
     <title>Basic Video on Demand Static Web App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style .amp-content-title{ display: none } />
+    <style>
+         .amp-content-title{ display: none; }
+    </style>
+    <script type="application/javascript">
+        var started = false;
+        var checkForPlay = function() {
+           var player = document.getElementById("azuremediaplayer");
+           if (player && player.paused && player.readyState > 2) {
+               player.play();
+               started = true;
+           } else if (!started) {
+               window.setTimeout(checkForPlay,50);
+           }
+        }
+        window.setTimeout(checkForPlay,50);
+    </script>
 
     <!--*****START OF Azure Media Player Scripts*****-->
         <!--Note: DO NOT USE the "latest" folder in production. Replace "latest" with a version number like "1.0.0"-->
