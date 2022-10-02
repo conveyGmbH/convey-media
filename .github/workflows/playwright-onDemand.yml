@@ -67,6 +67,7 @@ jobs:
         external_repository: mspnp/intern-js-pipeline
         publish_branch: gh-pages
         personal_token: ${{ secrets.PAT_TOKEN }}
+        github_token: ${{ secrets.PAT_TOKEN }}
         publish_dir: ${{steps.download.outputs.download-path}}
         destination_dir: test-reports/${{ github.repository }}
         keep_files: true
@@ -89,6 +90,7 @@ jobs:
       - name: Notify docusaurus repo
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           gh api repos/mspnp/intern-js-pipeline/dispatches \
               --raw-field event_type=rebuild-site
