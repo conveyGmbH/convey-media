@@ -58,6 +58,7 @@ jobs:
         publish_branch: gh-pages
         personal_token: ${{ secrets.PAT_TOKEN }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ${{steps.download.outputs.download-path}}
         destination_dir: test-reports/${{ github.repository }}
         keep_files: true
