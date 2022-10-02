@@ -57,7 +57,6 @@ jobs:
         external_repository: mspnp/intern-js-pipeline
         publish_branch: gh-pages
         personal_token: ${{ secrets.PAT_TOKEN }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ${{steps.download.outputs.download-path}}
         destination_dir: test-reports/${{ github.repository }}
@@ -81,7 +80,7 @@ jobs:
       - name: Notify dashboard repo
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         run: |
           gh api repos/mspnp/intern-js-pipeline/dispatches \
               --raw-field event_type=rebuild-site
